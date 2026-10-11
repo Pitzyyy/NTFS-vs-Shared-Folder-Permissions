@@ -64,7 +64,7 @@ Open Share Permissions and inspect default permissions assigned to the Everyone 
 </p>
 
 <p align="center">
-emove the Everyone group and explicitly grant Full Control, Change, and Read share permissions exclusively to the #HR_Staff security group
+Remove the Everyone group and explicitly grant Full Control, Change, and Read share permissions exclusively to the #HR_Staff security group
   <img src="./assets/images/7.png" alt="Create new user"
        style="width:80%;height:80%;display:block;margin:0 auto;" />
 </p>
@@ -77,33 +77,45 @@ emove the Everyone group and explicitly grant Full Control, Change, and Read sha
 
 ##
 
-### Activity 3: Restricting Access to HR Department Share
+### Activity 3:Restricting Subfolder Access via Permission Inheritance Removal
 ### Scenario
 
-The HR Department needs a secure folder "HRGroup" that only HR staff can access. Other employees should not see or access the folder at all.
+In the IT Department, all techs need access to the Software Repository "Software" but only senior IT staff should be able to access the "Licenses" subfolder.   
 ##
 
 <p align="center">
-Access folder Properties for HRGroup and open the Sharing tab to initiate network sharing options.
-  <img src="./assets/images/5.png" alt="Create new user"
+Access folder Properties for Software and click "Advanced Sharing" under the <br>  Sharing tab to enable network share access for the parent folder.
+  <img src="./assets/images/12.png" alt="Create new user"
        style="width:80%;height:80%;display:block;margin:0 auto;" />
 </p>
 
 <p align="center">
-Open Share Permissions and inspect default permissions assigned to the Everyone group.
-  <img src="./assets/images/6.png" alt="Create new user"
+Configure Share Permissions on the Software folder to grant Full Control / Change / Read permissions to the IT Department group.
+  <img src="./assets/images/13.png" alt="Create new user"
        style="width:80%;height:80%;display:block;margin:0 auto;" />
 </p>
 
 <p align="center">
-emove the Everyone group and explicitly grant Full Control, Change, and Read share permissions exclusively to the #HR_Staff security group
-  <img src="./assets/images/7.png" alt="Create new user"
+Open Advanced Security Settings for the "Licenses" subfolder to view inherited NTFS permissions from the parent C:\ drive.
+  <img src="./assets/images/14.png" alt="Create new user"
        style="width:80%;height:80%;display:block;margin:0 auto;" />
 </p>
 
 <p align="center">
-: Configure NTFS Security Permissions under the Security tab to ensure the #HR_Staff group is <br> granted Read & execute, List folder contents, and Read access on the file system level.
-  <img src="./assets/images/8.png" alt="Create new user"
+Click "Disable inheritance" and select "Remove all inherited permissions from this object" to block inherited access permissions.
+  <img src="./assets/images/15.png" alt="Create new user"
+       style="width:80%;height:80%;display:block;margin:0 auto;" />
+</p>
+
+<p align="center">
+Verify that all inherited permission entries are cleared from the Licenses subfolder.
+  <img src="./assets/images/16.png" alt="Create new user"
+       style="width:80%;height:80%;display:block;margin:0 auto;" />
+</p>
+
+<p align="center">
+Add explicit NTFS Security Permissions granting Full control exclusively to the #Senior_IT group on the Licenses subfolder.
+  <img src="./assets/images/17.png" alt="Create new user"
        style="width:80%;height:80%;display:block;margin:0 auto;" />
 </p>
 
